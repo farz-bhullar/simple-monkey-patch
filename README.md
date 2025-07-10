@@ -58,3 +58,17 @@ Here’s what happens internally when you monkey patch in Ruby:
     - Follows the method lookup chain (class → module ancestors → Object).
 
     - Calls the shout method you defined.
+
+So your method becomes as native as built-in ones like `.upcase`.
+
+---
+
+## ⚠️ Caution
+
+Monkey patching is powerful but risky:
+
+ - It affects all uses of the class globally.
+
+ - It can lead to conflicts if a gem or another file defines the same method.
+
+ - Always use clearly named methods to avoid collisions.
